@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolariantTech</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* NAV */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 40px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    }
+
+    .nav-links {
+        margin-left: auto;  /* EMPUJA el menú hacia la derecha */
+    }
+
+    .nav-links a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .btn-cotizar {
+        padding: 8px 15px;
+        background: #ccc;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+/* HERO */
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ¡Esto centra la sección completa! */
+    padding: 50px 40px;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor */
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin: 0 0 20px 0;
+        font-weight: 800;
+        max-width: 450px;
+    }
+
+    .btn-proyectos {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 20px;
+        background: #dcdcdc;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .hero img {
+        width: 480px;
+        border-radius: 10px;
+    }
+
+    /* RATING */
+    .rating-section {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .rating-emojis {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .rating-emojis span:hover {
+        transform: scale(1.2);
+    }
+
+    .selected {
+        transform: scale(1.3);
+        filter: drop-shadow(0px 0px 5px orange);
+    }
+
+        
+/* MISIÓN Y VISIÓN GRID */
+    .mision-vision {
+        max-width: 1200px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columnas */
+        gap: 40px;
+        padding: 0 40px;
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+    .mv-img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .card h3 {
+        margin: 10px 0;
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+/* SECCIÓN POR QUÉ ELEGIR ENERGÍA SOLAR */
+    .energia-solar-section {
+        max-width: 1200px;
+        margin: 60px auto;
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    .energia-solar-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* GRID DE 3 COLUMNAS */
+    .energia-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+/* ESTILO VISUAL EN TELEFONO */
+        @media (max-width: 900px) {
+        .energia-grid {
+            grid-template-columns: 1fr; /* se vuelve una sola columna */
+        }
+    }
+
+
+    /* CARDS */
+    .energia-item {
+    background: #fff;
+    padding: left;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .energia-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+
+/* SECCIÓN SERVICIOS SHARON */
+    /* Contenedor general */
+    .servicios-section {
+        padding: 40px 0;
+        width: 100%;
+        display: block; 
+    }
+
+    .servicios-container {
+        display: flex;          
+        flex-direction: row;    
+        align-items: flex-start;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;    
+        padding: 20px;
+    }
+
+    /* Imagen */
+    .servicios-img img {
+        width: 450px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    /* Texto */
+    .servicios-texto {
+        max-width: 550px;
+    }
+
+    /* Título */
+    .servicios-texto h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    /* Subtítulos */
+    .servicio-item h3 {
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    /* Párrafos */
+    .servicio-item p {
+        font-size: 15px;
+        color: #444;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+        .servicios-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .servicios-img img {
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .servicios-texto {
+            max-width: 100%;
+        }
+
+        .servicios-texto h2 {
+            text-align: center;
+        }
+    }
+
+
+/* ================================
+CALCULADORA Y LOS 4 MODALES
+================================ */
+    .calc-wrapper {
+        background: linear-gradient(to bottom, #0d5c80, #20b8a5);
+        padding: 60px 20px;
+        border-radius: 30px;
+        text-align: center;
+        color: white;
+        max-width: 900px;
+        margin: 50px auto;
+    }
+
+    /* TÍTULOS */
+    .calc-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .calc-sub {
+        font-size: 15px;
+        opacity: 0.9;
+        margin-bottom: 40px;
+    }
+
+    /* TARJETAS */
+    .calc-options {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .calc-card {
+        background: rgba(255,255,255,0.2);
+        backdrop-filter: blur(5px);
+        width: 130px;
+        padding: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    /* ICONO */
+    .calc-card img {
+        width: 35px;
+        margin-bottom: 10px;
+    }
+
+    .calc-card span {
+        display: block;
+        color: white;
+        font-weight: 600;
+    }
+
+    /* HOVER */
+    .calc-card:hover {
+        background: rgba(255,255,255,0.30);
+        transform: translateY(-5px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+        .calc-card {
+            width: 110px;
+        }
+    }
+
+        /* CALCULADORA */
+        /* MODAL GENERAL para la mayoria de opciones */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+            z-index: 9999;
+        }
+
+        /* CONTENIDO DEL MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(3px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ================================
+        ESTILO GENERAL DE 4 MODALES
+        ================================ */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 35px;
+            width: 90%;
+            max-width: 480px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+            position: relative;
+
+            /* Animación */
+            animation: modalFade 0.25s ease-out;
+        }
+
+        /* Animación suave */
+        @keyframes modalFade {
+            from { transform: scale(0.9); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        /* Botón X */
+        .modal-close, .close {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #d94545;
+            transition: 0.2s ease;
+        }
+
+        .modal-close:hover, .close:hover {
+            color: #ff2a2a;
+            transform: scale(1.2);
+        }
+
+        /* Títulos y textos */
+        .modal-content h2 {
+            margin-top: 5px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #0b3c60;
+            text-align: center;
+        }
+
+        .modal-sub, .modal-content p {
+            color: #555;
+            text-align: center;
+            margin-bottom: 22px;
+            font-size: 15px;
+        }
+
+        /* Inputs y selects */
+        .modal-content input,
+        .modal-content select {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            border: 1px solid #cdd7df;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: 0.2s;
+            font-size: 15px;
+        }
+
+        .modal-content input:focus,
+        .modal-content select:focus {
+            border-color: #1b9aaa;
+            box-shadow: 0 0 6px rgba(27,154,170,0.3);
+            outline: none;
+        }
+
+        /* Botones */
+        .modal-content button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #07a36b, #0cb981);
+            border: none;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: 0.25s;
+        }
+
+        .modal-content button:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+        }
+
+        /* Resultados */
+        .resultado {
+            margin-top: 20px;
+            padding: 18px 15px;
+            background: #eefaf3;
+            border: 1px solid #bde8cf;
+            border-radius: 12px;
+        }
+
+        .resultado h3 {
+            margin-bottom: 12px;
+            color: #0b7a45;
+        }
+
+        .resultado p {
+            margin: 6px 0;
+            font-size: 15px;
+        }
+
+/* ======== TESTIMONIOS REDES SOCIALES ======== */
+    .testimonios {
+        padding: 80px 10%;
+        background: #f8fafc;
+    }
+
+    .testimonios-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #0e1b1e;
+    }
+
+    .testimonios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .test-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 25px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+        transition: all 0.25s ease;
+    }
+
+    .test-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 22px rgba(0,0,0,0.10);
+    }
+
+    .test-head {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .avatar {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .test-card h4 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .test-card span {
+        font-size: 14px;
+        color: #64748b;
+    }
+
+    /* ⭐ Estrellas estilo Google Reviews */
+    .stars {
+        color: #fbbf24; /* Amarillo bonito */
+        font-size: 20px;
+        margin: 5px 0 12px;
+        letter-spacing: 2px;
+        user-select: none;
+        font-weight: bold;
+        text-shadow: 0px 0px 3px rgba(251,191,36,0.4);
+    }
+
+    .test-text {
+        font-size: 15px;
+        line-height: 1.55;
+        color: #374151;
+    }
+
+/* ==================== FAQ SECTION ==================== */
+    .faq-section{
+        width: 100%;
+        padding: 70px 0;
+        display:flex;
+        justify-content:center;
+    }
+
+    .faq-container{
+        width: 80%;
+        max-width: 1300px;
+        display: flex;
+        gap: 40px;
+
+        /* ⭐ Alinear columnas al mismo nivel */
+        align-items: center;
+    }
+
+    .faq-left{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* ⭐ Centrado vertical */
+    }
+
+    .faq-title{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .faq-image{
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .faq-right{
+        width: 55%;
+    }
+
+    .faq-box{
+        max-height: 420px;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    /* Scrollbar */
+    .faq-box::-webkit-scrollbar{
+        width: 6px;
+    }
+    .faq-box::-webkit-scrollbar-thumb{
+        background: #0abf53;
+        border-radius: 8px;
+    }
+
+    .faq-item{
+        margin-bottom: 12px;
+    }
+
+    .faq-question{
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+        background: #f4f4f4;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .faq-question:hover{
+        background: #e9e9e9;
+    }
+
+    /* Animación */
+    .faq-answer{
+        background: #fff;
+        border-left: 4px solid #0abf53;
+        margin-top: 6px;
+        border-radius: 8px;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.35s ease;
+        padding: 0 15px;
+    }
+
+    .faq-answer.open{
+        max-height: 200px;
+        opacity: 1;
+        padding: 12px 15px;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 900px){
+
+        .faq-container{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .faq-left, .faq-right{
+            width: 100%;
+        }
+
+        .faq-box{
+            max-height: 350px;
+        }
+
+        .faq-title{
+            font-size: 2rem;
+        }
+    }
+
+/* ==================== FOOTER ==================== */
+    .main-footer{
+        background: #f1f1f1;  /* Gris suave */
+        color: #333;
+        padding: 60px 0 25px;
+        margin-top: 80px;
+        border-top: 2px solid #e0e0e0;
+    }
+
+    .footer-container{
+        width: 90%;
+        max-width: 1300px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .footer-logo{
+        width: 270px;
+        margin-bottom: 15px;
+    }
+
+    .footer-column h4{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #222;
+    }
+
+    .footer-column p{
+        line-height: 1.6;
+        max-width: 260px;
+    }
+
+    .footer-column ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-column ul li{
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .footer-column ul li a{
+        text-decoration: none;
+        color: #555;
+        transition: 0.25s;
+    }
+
+    .footer-column ul li a:hover{
+        color: #0abf53; /* Verde solar */
+    }
+
+    .footer-bottom{
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid #d4d4d4;
+        margin-top: 25px;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+/* ==================== RESPONSIVE ==================== */
+    @media (max-width: 900px){
+        .footer-container{
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .footer-column p{
+            margin: auto;
+        }
+    }
+
+
+/* ==================== BOTONES FLOTANTES ==================== */
+    .btn-floating {
+        position: fixed;
+        bottom: 20px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        cursor: pointer;
+        transition: transform 0.3s;
+        z-index: 999;
+    }
+
+    .btn-floating img{
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Botón WhatsApp */
+    .whatsapp-btn{
+        right: 20px;
+    }
+
+    /* Botón Email */
+    .email-btn{
+        right: 100px;
+    }
+
+    .btn-floating:hover{
+        transform: scale(1.1);
+    }
+
+/* ==================== RESPONSIVE ==================== */
+    @media (max-width: 600px){
+        .email-btn{
+            right: 20px;
+            bottom: 95px;
+        }
+    }
+
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <img src="Imagenes/Logo.png" alt="Logo" width="150">
+
+    <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#energia">Energía Solar</a>
+        <a href="#testimonios">Casos de éxito</a>
+    </div>
+
+    <a href="#calculadora" class="btn-cotizar">Cotiza ahora</a>
+</nav>
+
+
+<!-- HERO SECTION -->
+<section id="inicio"><div class="hero">
+    <div>
+        <h1>ENERGÍA SOLAR<br>PARA UN FUTURO<br>SOSTENIBLE</h1>
+
+        <a class="btn-proyectos" href="#testimonios">CONOCE NUESTROS PROYECTOS</a> 
+     
+        <!-- CALIFICANOS AHORA DENTRO DEL HERO -->
+        <div class="rating-section" style="margin-top: 25px;">
+            <div class="rating-emojis" id="rating">
+                <span data-value="1">😡</span>
+                <span data-value="2">😞</span>
+                <span data-value="3">😐</span>
+                <span data-value="4">🙂</span>
+                <span data-value="5">😁</span>
+            </div>
+
+            <p id="rating-text" style="margin-top: 10px; font-size: 18px; font-weight: bold;">
+                CALIFÍCANOS
+            </p>
+        </div>
+        <!-- FIN DE CALIFICANOS -->
+    </div>
+
+    <img src="Imagenes/Imagen1.png" alt="Paneles solares">
+</div>
+</section>
+
+<!-- ============================
+SECCIÓN DE TESTIMONIOS MISIÓN Y VISIÓN
+=============================== -->
+<div class="mision-vision">
+
+    <div class="card">
+        <img src="Imagenes/Imagen2.png" alt="Paneles solares" class="mv-img">
+        <h3>Misión</h3>
+        <p>
+            En SOLARIANTECH trabajamos para llevar energía limpia, accesible y confiable a hogares,
+            empresas y comunidades, mediante soluciones innovadoras en energía solar que contribuyen al
+            desarrollo sostenible y al cuidado del planeta.
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="Imagenes/Imagen3.png" alt="Planeta vista espacial" class="mv-img">
+        <h3>Visión</h3>
+        <p>
+            Ser en el 2030 una de las empresas líderes en energías renovables en Colombia y Latinoamérica,
+            reconocida por la innovación, la calidad de nuestros proyectos y el compromiso con el desarrollo
+            sostenible y la transición hacia un futuro más verde.
+        </p>
+        
+    </div>
+</div>
+
+<!-- ============================
+POR QUÉ ELEGIR ENERGIA SOLAR
+=============================== -->
+<section id="energia"><div class="energia-solar-section">
+
+    <h2>¿POR QUÉ ELEGIR ENERGÍA SOLAR?</h2>
+
+    <div class="energia-grid">
+
+        <div class="energia-item">
+            <img src="Imagenes/Imagen4Ahorro.png" alt="Ahorro económico">
+            <h3>Ahorro económico</h3>
+            <p>
+                Reduce significativamente la factura de energía y, en muchos casos,
+                permite independencia de las altas tarifas de la red eléctrica.
+            </p>
+        </div>
+
+        <div class="energia-item">
+            <img src="Imagenes/Imagen5Energia.png" alt="Energía sostenible">
+            <h3>Energía limpia y sostenible</h3>
+            <p>
+                No contamina ni emite gases de efecto invernadero, ayudando a combatir
+                el cambio climático y protegiendo el medio ambiente.
+            </p>
+        </div>
+
+        <div class="energia-item">
+            <img src="Imagenes/Imagen6Inversion.png" alt="Inversión inteligente">
+            <h3>Inversión inteligente a futuro</h3>
+            <p>
+                Los sistemas solares tienen una larga vida útil, aumentan el valor de
+                la propiedad y garantizan suministro energético estable y confiable.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- SERVICIOS PARTE SHARON -->
+<section id="servicios"><div class="servicios-container">
+
+        <div class="servicios-img">
+            <img src="Imagenes/servicios-solar.jpg" alt="Paneles solares">
+        </div>
+
+        <div class="servicios-texto">
+            <h2>SERVICIOS</h2>
+
+            <div class="servicio-item">
+                <h3>Instalación de sistemas solares fotovoltaicos</h3>
+                <p>Diseño, suministro e instalación de paneles solares para hogares, empresas y fincas, adaptados a cada necesidad energética.</p>
+            </div>
+
+            <div class="servicio-item">
+                <h3>Mantenimiento y monitoreo de sistemas solares</h3>
+                <p>Servicio técnico preventivo y correctivo para garantizar el máximo rendimiento y vida útil de las instalaciones solares.</p>
+            </div>
+
+            <div class="servicio-item">
+                <h3>Asesoría y proyectos de eficiencia energética</h3>
+                <p>Estudios, diseño y ejecución de soluciones sostenibles que optimizan el consumo eléctrico y reducen costos operativos.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================
+     SECCIÓN DE CALCULADORA
+=============================== -->
+<section id="calculadora" class="calc-wrapper">
+    <h2 class="calc-title">Calculadora de ahorro energético</h2>
+    <p class="calc-sub">En menos de 1 minuto simulamos tu ahorro con SOLARIANTECH</p>
+
+    <div class="calc-options">
+        <div class="calc-card" data-option="hogar">
+            <img src="Imagenes/Hogar.png" alt="Hogar">
+            <span>Por Hogar</span>
+        </div>
+
+        <div class="calc-card" data-option="cups">
+            <img src="Imagenes/CUPS.png" alt="CUPS">
+            <span>Por CUPS</span>
+        </div>
+
+        <div class="calc-card" data-option="factura">
+            <img src="Imagenes/Factura.png" alt="Factura">
+            <span>Por Factura</span>
+        </div>
+
+        <div class="calc-card" data-option="contrato">
+            <img src="Imagenes/Contrato.png" alt="Contrato">
+            <span>Por Contrato</span>
+        </div>
+    </div>
+
+</section>
+
+        <!-- MODAL POR HOGAR -->
+        <div id="modal-hogar" class="modal">
+            <div class="modal-content">
+
+                <!-- Botón cerrar -->
+                <span class="modal-close">&times;</span>
+
+                <h2>Simulación por Hogar</h2>
+                <p class="modal-sub">Calcula tu ahorro mensual ingresando tu consumo en kWh.</p>
+
+                <label>Consumo mensual (kWh):</label>
+                <input type="number" id="kwh" placeholder="Ej: 350">
+
+                <label>Estrato:</label>
+                <select id="estrato">
+                    <option value="1">Estrato 1–2</option>
+                    <option value="3">Estrato 3</option>
+                    <option value="4">Estrato 4</option>
+                    <option value="5">Estrato 5–6</option>
+                </select>
+
+                <button id="calc-hogar-btn">Calcular ahorro</button>
+
+                <!-- RESULTADOS -->
+                <div id="resultado-hogar" class="resultado" style="display:none;">
+                    <h3>Resultados</h3>
+
+                    <p><strong>Ahorro mensual:</strong> <span id="ahorro-mes"></span></p>
+                    <p><strong>Ahorro anual:</strong> <span id="ahorro-anual"></span></p>
+                    <p><strong>Sistema recomendado:</strong> <span id="sistema"></span></p>
+                    <p><strong>Costo aproximado:</strong> <span id="costo"></span></p>
+                    <p><strong>Retorno de inversión (ROI):</strong> <span id="roi"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal DE CONTRATO DE SERVICIO -->
+        <div id="modal-contrato" class="modal">
+            <div class="modal-content">
+                
+                <span class="close" onclick="cerrarModal('modal-contrato')">&times;</span>
+
+                <h2>Contrato por Servicio</h2>
+                <p>Simula tu gasto energético y tu ahorro instalando paneles solares.</p>
+
+                <label>Consumo mensual (kWh)</label>
+                <input type="number" id="consumoContrato" placeholder="Ej. 250">
+
+                <label>Tarifa kWh (COP)</label>
+                <input type="number" id="tarifaContrato" value="750">
+
+                <label>Cargo fijo mensual (COP)</label>
+                <input type="number" id="cargoFijoContrato" value="12000">
+
+                <button onclick="calcularContrato()">Calcular</button>
+
+                <div class="resultado" id="resultadoContrato"></div>
+
+            </div>
+        </div>
+
+        <!-- Modal POR CUPS -->
+        <div id="modal-cups" class="modal">
+            <div class="modal-content">
+
+                <span class="close" onclick="cerrarModal('modal-cups')">&times;</span>
+
+                <h2>Simulación por CUPS</h2>
+                <p>Ingresa tu código CUPS y tu consumo para estimar tu ahorro.</p>
+
+                <label>Código CUPS</label>
+                <input type="text" id="cups" placeholder="Ej. 45123456789">
+
+                <label>Consumo mensual (kWh)</label>
+                <input type="number" id="consumoCUPS" placeholder="Ej. 250">
+
+                <button onclick="calcularCUPS()">Calcular</button>
+
+                <div class="resultado" id="resultadoCUPS"></div>
+
+            </div>
+        </div>
+
+        <!-- Modal POR VALOR FACTURA -->
+        <div id="modal-factura" class="modal">
+            <div class="modal-content">
+
+                <span class="close" onclick="cerrarModal('modal-factura')">&times;</span>
+
+                <h2>Simulación por Valor de la Factura</h2>
+                <p>Ingresa cuánto pagaste en tu última factura y te mostraremos tu ahorro estimado.</p>
+
+                <label>Valor total factura (COP)</label>
+                <input type="number" id="valorFactura" placeholder="Ej. 150000">
+
+                <button onclick="calcularFactura()">Calcular</button>
+
+                <div class="resultado" id="resultadoFactura"></div>
+
+            </div>
+        </div>
+
+<!-- ============================
+     SECCIÓN DE TESTIMONIOS
+=============================== -->
+<section id="testimonios" class="testimonios">
+    <h2 class="testimonios-title">Casos de Éxito</h2>
+
+    <div class="testimonios-grid">
+
+        <!-- Testimonio 1 -->
+        <div class="test-card">
+            <div class="test-head">
+                <img src="https://i.pravatar.cc/100?img=12" class="avatar">
+                <div>
+                    <h4>Carolina Gómez</h4>
+                    <span>Cliente empresarial — Medellín</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                Instalamos un sistema solar con SOLARIANTECH en nuestra planta y ha sido una buena decisión.
+                La factura bajó bastante y el proceso fue muy organizado. El equipo siempre respondió rápido.
+            </p>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="test-card">
+            <div class="test-head">
+                <img src="https://i.pravatar.cc/100?img=48" class="avatar">
+                <div>
+                    <h4>María Fernanda Ríos</h4>
+                    <span>Propietaria rural — Santander</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                En mi finca el consumo era muy alto. Con los paneles estoy pagando menos y ahora tengo luz 
+                incluso cuando se va en la zona. El acompañamiento fue claro desde el inicio.
+            </p>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="test-card">
+            <div class='test-head'>
+                <img src="https://i.pravatar.cc/100?img=32" class="avatar">
+                <div>
+                    <h4>Laura Rodríguez</h4>
+                    <span>Cliente residencial — Bogotá</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                Quería reducir mis gastos y hacer algo por el medio ambiente. La instalación fue rápida y 
+                ahora produzco parte de mi energía. Excelente servicio.
+            </p>
+        </div>
+
+        <!-- Testimonio 4 -->
+        <div class="test-card">
+            <div class='test-head'>
+                <img src="https://i.pravatar.cc/100?img=7" class="avatar">
+                <div>
+                    <h4>Andrés Beltrán</h4>
+                    <span>Cliente residencial — Cali</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                Tenía dudas sobre si valía la pena, pero me explicaron todo con paciencia. La instalación fue 
+                muy limpia y desde el primer mes mi factura bajó.
+            </p>
+        </div>
+
+        <!-- Testimonio 5 -->
+        <div class="test-card">
+            <div class='test-head'>
+                <img src="https://i.pravatar.cc/100?img=50" class="avatar">
+                <div>
+                    <h4>Sofía Medina</h4>
+                    <span>Comerciante — Bucaramanga</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                Trabajo con refrigeradores todo el día y el gasto era alto. Con los paneles el consumo bajó 
+                bastante y ya no tengo tantos picos en el recibo.
+            </p>
+        </div>
+
+        <!-- Testimonio 6 -->
+        <div class="test-card">
+            <div class='test-head'>
+                <img src="https://i.pravatar.cc/100?img=22" class="avatar">
+                <div>
+                    <h4>Juliana Torres</h4>
+                    <span>Cliente nueva — Envigado</span>
+                </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+
+            <p class="test-text">
+                Lo que más me gustó fue el soporte. Después de instalar los paneles me enseñaron a monitorear 
+                mi energía. Muy satisfecha con todo el proceso.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================
+SECCIÓN DE PREGUNTAS FRECUENTES
+=============================== -->
+<section id="faq" class="faq-section">
+    <div class="faq-container">
+
+        <!-- Columna izquierda -->
+        <div class="faq-left">
+            <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
+
+            <img src="Imagenes/Imagen7Preguntas.png" alt="FAQ Imagen" class="faq-image">
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="faq-right">
+            <div class="faq-box">
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Cuánto dura la instalación de un sistema solar?</button>
+                    <div class="faq-answer">
+                        Generalmente entre 1 y 3 días, dependiendo del tamaño del sistema y las condiciones del lugar.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué mantenimiento requieren los paneles solares?</button>
+                    <div class="faq-answer">
+                        Solo limpieza periódica y una revisión técnica anual para asegurar que todo funcione correctamente.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué pasa si un día está nublado o llueve?</button>
+                    <div class="faq-answer">
+                        Los paneles continúan generando energía, aunque con menor intensidad.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Puedo financiar la instalación?</button>
+                    <div class="faq-answer">
+                        Sí, contamos con opciones de financiación y convenios con entidades aliadas.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Cuánto ahorro puedo obtener al instalar paneles solares?</button>
+                    <div class="faq-answer">
+                        En promedio entre el 40% y el 70%, dependiendo de tu consumo y tipo de propiedad.
+                    </div>
+                </div>
+
+                <!-- ⭐ NUEVA Pregunta 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué vida útil tienen los paneles solares?</button>
+                    <div class="faq-answer">
+                        La mayoría de los paneles tienen una vida útil de 25 a 30 años, conservando más del 80% de su eficiencia.
+                    </div>
+                </div>
+
+                <!-- ⭐ NUEVA Pregunta 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">¿Necesito permisos para instalar un sistema solar?</button>
+                    <div class="faq-answer">
+                        Sí, pero nosotros nos encargamos del proceso. Cada municipio tiene sus normativas, pero la mayoría de trámites son rápidos.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="contacto" class="main-footer">
+    <div class="footer-container">
+
+        <!-- Columna del logo -->
+        <div class="footer-column">
+            <img src="Imagenes/Logo2.png" alt="Logo" class="footer-logo">
+            <p>Soluciones integrales en energía solar para hogares y empresas.</p>
+        </div>
+
+        <!-- Enlaces -->
+        <div class="footer-column">
+            <h4>Enlaces</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul>
+                <li>📍 Colombia</li>
+                <li>📞 +57 300 000 0000</li>
+                <li>✉ contacto@ecosolar.com</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 EcoSolar — Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <!-- ==================== BOTONES FLOTANTES DE CONTACTO ==================== -->
+<section id="contacto">
+<a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20más%20información%20sobre%20los%20sistemas%20solares" 
+   class="btn-floating whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png">
+</a>
+
+<a href="mailto:contacto@ecosolar.com" 
+   class="btn-floating email-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+</a>
+</section>
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+    /* CALIFICANOS */
+    const emojis = document.querySelectorAll("#rating span");
+    const ratingText = document.getElementById("rating-text");
+
+    emojis.forEach(emoji => {
+        emoji.addEventListener("click", () => {
+            emojis.forEach(e => e.classList.remove("selected"));
+
+            emoji.classList.add("selected");
+
+            ratingText.innerText = "Gracias por tu calificación: " + emoji.dataset.value + "/5";
+        });
+    });
+
+    /* CALCULADORA*/
+    document.querySelectorAll(".calc-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const selected = card.getAttribute("data-option");
+            alert("Seleccionaste: " + selected);
+            // Aquí después cargaremos el formulario correspondiente
+        });
+    });
+
+        // -----------------------------------------
+        // MODAL DE HOGAR
+        // -----------------------------------------
+        const modalHogar = document.getElementById("modal-hogar");
+        const closeHogar = document.querySelector(".modal-close");
+
+        // Cuando seleccionen la tarjeta "Por Hogar"
+        document.querySelector('[data-option="hogar"]').addEventListener("click", () => {
+            modalHogar.style.display = "flex";
+        });
+
+        // Cerrar modal
+        closeHogar.addEventListener("click", () => {
+            modalHogar.style.display = "none";
+        });
+
+        // Cerrar al hacer clic por fuera
+        window.addEventListener("click", (e) => {
+            if (e.target === modalHogar) {
+                modalHogar.style.display = "none";
+            }
+        });
+
+        // -----------------------------------------
+        // CÁLCULO POR HOGAR
+        // -----------------------------------------
+        const tarifas = {
+            1: 650,
+            3: 720,
+            4: 810,
+            5: 880
+        };
+
+        document.getElementById("calc-hogar-btn").addEventListener("click", () => {
+
+            const kwh = parseFloat(document.getElementById("kwh").value);
+            const estrato = document.getElementById("estrato").value;
+
+            if (!kwh || kwh <= 0) {
+                alert("Por favor ingresa un consumo válido.");
+                return;
+            }
+
+            const tarifa = tarifas[estrato];
+
+            // Costo actual
+            const costo_actual = kwh * tarifa;
+
+            // Sistema sugerido (1 kWp = 125 kWh/mes)
+            const sistema_kWp = (kwh / 125).toFixed(1);
+
+            // Costo aproximado (3 millones por kWp)
+            const costo_sistema = sistema_kWp * 3000000;
+
+            // Ahorro
+            const produccion = sistema_kWp * 125;
+            const ahorro_mensual = Math.min(kwh, produccion) * tarifa;
+            const ahorro_anual = ahorro_mensual * 12;
+
+            // ROI
+            const roi = (costo_sistema / ahorro_anual).toFixed(1);
+
+            // Mostrar resultados
+            document.getElementById("resultado-hogar").style.display = "block";
+            document.getElementById("ahorro-mes").textContent = "$" + ahorro_mensual.toLocaleString();
+            document.getElementById("ahorro-anual").textContent = "$" + ahorro_anual.toLocaleString();
+            document.getElementById("sistema").textContent = sistema_kWp + " kWp";
+            document.getElementById("costo").textContent = "$" + costo_sistema.toLocaleString();
+            document.getElementById("roi").textContent = roi + " años";
+        });
+
+        
+        // -----------------------------------------
+        // MODAL DE CONTRATO y Calculo
+        // -----------------------------------------
+
+        function abrirModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function cerrarModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        function calcularContrato() {
+
+            let consumo = parseFloat(document.getElementById("consumoContrato").value);
+            let tarifa = parseFloat(document.getElementById("tarifaContrato").value);
+            let cargoFijo = parseFloat(document.getElementById("cargoFijoContrato").value);
+
+            if (isNaN(consumo) || consumo <= 0) {
+                alert("Por favor ingresa un consumo válido.");
+                return;
+            }
+
+            // Cálculo actual
+            let costoActual = (consumo * tarifa) + cargoFijo;
+
+            // Con paneles (reducción del 80%)
+            let reduccion = 0.80;
+            let consumoSolar = consumo * (1 - reduccion);
+
+            let costoSolar = (consumoSolar * tarifa) + cargoFijo;
+
+            let ahorro = costoActual - costoSolar;
+
+            document.getElementById("resultadoContrato").innerHTML = `
+                🔌 <b>Costo actual:</b> $${costoActual.toLocaleString("es-CO")} COP <br>
+                ☀️ <b>Costo con paneles:</b> $${costoSolar.toLocaleString("es-CO")} COP <br>
+                💰 <b>Ahorro mensual:</b> $${ahorro.toLocaleString("es-CO")} COP
+            `;
+        }
+
+        
+        // -----------------------------------------
+        // MODAL DE CUPS y Calculo
+        // -----------------------------------------
+        function calcularCUPS() {
+        let cups = document.getElementById("cups").value.trim();
+        let consumo = parseFloat(document.getElementById("consumoCUPS").value);
+
+        if (cups.length < 6) {
+            alert("El código CUPS es demasiado corto.");
+            return;
+        }
+
+        if (isNaN(consumo) || consumo <= 0) {
+            alert("Por favor ingresa un consumo válido.");
+            return;
+        }
+
+        // Determinar estrato según primer dígito
+        let inicio = parseInt(cups.charAt(0));
+        let tarifa, cargoFijo, estrato;
+
+        if (inicio <= 2) {
+            estrato = "Estrato 1-2";
+            tarifa = 480;
+            cargoFijo = 7500;
+        } else if (inicio <= 4) {
+            estrato = "Estrato 3-4";
+            tarifa = 650;
+            cargoFijo = 10000;
+        } else {
+            estrato = "Estrato 5-6";
+            tarifa = 820;
+            cargoFijo = 16000;
+        }
+
+        // Cálculo actual
+        let costoActual = (consumo * tarifa) + cargoFijo;
+
+        // Con paneles (80% reducción)
+        let consumoSolar = consumo * 0.20;
+        let costoSolar = (consumoSolar * tarifa) + cargoFijo;
+
+        let ahorro = costoActual - costoSolar;
+
+        document.getElementById("resultadoCUPS").innerHTML = `
+            🏷 <b>${estrato}</b> (detectado por CUPS)<br><br>
+            🔌 <b>Costo actual:</b> $${costoActual.toLocaleString("es-CO")} COP <br>
+            ☀️ <b>Costo con paneles:</b> $${costoSolar.toLocaleString("es-CO")} COP <br>
+            💰 <b>Ahorro mensual:</b> $${ahorro.toLocaleString("es-CO")} COP
+        `;
+    }
+
+        // -----------------------------------------
+        // MODAL DE FACTURA y Calculo
+        // -----------------------------------------
+
+            function calcularFactura() {
+
+            let valor = parseFloat(document.getElementById("valorFactura").value);
+
+            if (isNaN(valor) || valor <= 20000) {
+                alert("Por favor ingresa un valor de factura válido.");
+                return;
+            }
+
+            let estrato, tarifa, cargoFijo;
+
+            // Determinar estrato según el valor total pagado
+            if (valor <= 90000) {
+                estrato = "Estrato 1-2";
+                tarifa = 480;
+                cargoFijo = 7500;
+            } 
+            else if (valor <= 180000) {
+                estrato = "Estrato 3-4";
+                tarifa = 650;
+                cargoFijo = 10000;
+            } 
+            else {
+                estrato = "Estrato 5-6";
+                tarifa = 820;
+                cargoFijo = 16000;
+            }
+
+            // Estimar consumo real
+            let consumo = (valor - cargoFijo) / tarifa;
+
+            if (consumo < 0) consumo = 0;
+
+            // Cálculo actual
+            let costoActual = valor;
+
+            // Con paneles: reducción 80% del consumo
+            let consumoSolar = consumo * 0.20;
+            let costoSolar = (consumoSolar * tarifa) + cargoFijo;
+
+            let ahorro = costoActual - costoSolar;
+
+            document.getElementById("resultadoFactura").innerHTML = `
+                🧾 <b>Factura ingresada:</b> $${valor.toLocaleString("es-CO")} COP <br>
+                🏷 <b>${estrato}</b> (estimado)<br><br>
+
+                🔌 <b>Consumo estimado:</b> ${consumo.toFixed(1)} kWh/mes<br>
+                
+                ☀️ <b>Costo con paneles:</b> $${costoSolar.toLocaleString("es-CO")} COP <br>
+                💰 <b>Ahorro mensual estimado:</b> $${ahorro.toLocaleString("es-CO")} COP
+            `;
+        }
+
+                        // ABRIR 4 MODALES Calculadora
+                        document.querySelectorAll(".calc-card").forEach(card => {
+                            card.addEventListener("click", () => {
+                                const option = card.dataset.option;
+
+                                if (option === "hogar") {
+                                    document.getElementById("modal-hogar").style.display = "flex";
+                                } 
+                                else if (option === "cups") {
+                                    document.getElementById("modal-cups").style.display = "flex";
+                                }
+                                else if (option === "factura") {
+                                    document.getElementById("modal-factura").style.display = "flex";
+                                }
+                                else if (option === "contrato") {
+                                    document.getElementById("modal-contrato").style.display = "flex";
+                                }
+                            });
+                        });
+
+                        // CERRAR MODALES (sirve para todos)
+                        document.querySelectorAll(".modal-close, .close").forEach(btn => {
+                            btn.addEventListener("click", () => {
+                                btn.closest(".modal").style.display = "none";
+                            });
+                        });
+
+                        // Cerrar al tocar afuera
+                        window.addEventListener("click", event => {
+                            if (event.target.classList.contains("modal")) {
+                                event.target.style.display = "none";
+                            }
+                        });
+
+
+// ==================== FAQ ANIMADO ====================
+document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const answer = btn.nextElementSibling;
+
+        // Cerrar todas las respuestas
+        document.querySelectorAll(".faq-answer").forEach(a => {
+            if (a !== answer) {
+                a.classList.remove("open");
+            }
+        });
+
+        // Alternar la respuesta seleccionada
+        answer.classList.toggle("open");
+    });
+});
+
+        
+</script>
+
+
+
+</body>
+</html>
