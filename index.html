@@ -11,6 +11,73 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
+    /* -------------------------- */
+    /* HEADER HAMBUGUESA  */
+    /* -------------------------- */
+    .nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    border-bottom: 1px solid #ddd;
+    }
+
+
+    .nav.open {
+    max-height: 300px;
+    }
+
+
+    .nav a {
+    padding: 15px 0;
+    display: block;
+    width: 100%;
+    }
+
+
+    * { text-align: center !important; }
+
+
+    img {
+    max-width: 100%;
+    height: auto;
+    }
+
+
+    section {
+    padding: 40px 20px;
+    }
+
+
+    /* -------------------------- */
+    /* BOTÓN "SUBIR ARRIBA" */
+    /* -------------------------- */
+    .btn-top {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    padding: 12px 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    }
+
+
+    .btn-top.show {
+    display: block;
+    }
+
 /* NAV */
     nav {
         display: flex;
@@ -45,6 +112,10 @@
         color: #333;
         font-weight: bold;
     }
+
+
+
+
 
 /* HERO */
     .hero {
@@ -811,16 +882,45 @@ CALCULADORA Y LOS 4 MODALES
 
 <!-- NAV -->
 <nav>
-    <img src="Imagenes/Logo.png" alt="Logo" width="150">
+    <header class="header">
+        <div class="logo">SOLARIAN TECH</div>
+        <button class="hamburger" id="hamburger">☰</button>
 
-    <div class="nav-links">
+        <nav class="nav" id="nav">
         <a href="#inicio">Inicio</a>
+        <a href="#beneficios">Beneficios</a>
         <a href="#servicios">Servicios</a>
-        <a href="#energia">Energía Solar</a>
-        <a href="#testimonios">Casos de éxito</a>
-    </div>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+        </nav>
+        </header>
 
-    <a href="#calculadora" class="btn-cotizar">Cotiza ahora</a>
+        <section id="inicio">
+        <h1>Impulsa tu negocio con automatización</h1>
+        </section>
+
+        <section id="beneficios">
+        <h2>Beneficios</h2>
+        </section>
+
+        <section id="servicios">
+        <h2>Servicios</h2>
+        </section>
+
+        <section id="calculadora">
+        <h2>Calculadora de ROI</h2>
+        </section>
+
+        <section id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        </section>
+
+        <section id="contacto">
+        <h2>Contacto</h2>
+        </section>
+
+    <button id="btnTop" class="btn-top">↑</button>
 </nav>
 
 
@@ -1634,6 +1734,34 @@ document.querySelectorAll(".faq-question").forEach(btn => {
     });
 });
 
+// ==========================
+// MENÚ HAMBURGUESA
+// ==========================
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("nav");
+
+
+hamburger.addEventListener("click", () => {
+nav.classList.toggle("open");
+});
+
+
+
+
+// ==========================
+// BOTÓN SUBIR ARRIBA
+// ==========================
+const btnTop = document.getElementById("btnTop");
+
+
+window.addEventListener("scroll", () => {
+btnTop.classList.toggle("show", window.scrollY > 300);
+});
+
+
+btnTop.addEventListener("click", () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
         
 </script>
 
