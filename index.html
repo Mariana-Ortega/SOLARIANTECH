@@ -46,6 +46,29 @@
         font-weight: bold;
     }
 
+    /* HAMBURGUESA SOLO MÓVIL */
+    .hamburger { display: none; font-size: 30px; background: none; border: none; cursor: pointer; }
+
+
+    @media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    transition: max-height .3s ease;
+    }
+    .nav.open { max-height: 350px; }
+    .nav a { padding: 15px 0; margin: 0; }
+    }
+
+
 /* HERO */
     .hero {
     display: flex;
@@ -904,7 +927,8 @@ CALCULADORA Y LOS 4 MODALES
 <body>
 
 <!-- NAV -->
-<nav>
+</header class="header">
+<nav class="nav" id="nav">
     <img src="Imagenes/Logo.png" alt="Logo" width="150">
 
         <button class="hamburger" id="hamburger">☰</button>
@@ -945,6 +969,8 @@ CALCULADORA Y LOS 4 MODALES
     </div>
 
     <img src="Imagenes/Imagen1.png" alt="Paneles solares">
+
+    <button id="btnTop" class="btn-top">↑</button> 
 </div>
 </section>
 
@@ -1730,10 +1756,11 @@ document.querySelectorAll(".faq-question").forEach(btn => {
     });
 });
 
-// ==================== Menú hamburguesa ====================
+// MENÚ HAMBURGUESA
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 hamburger.addEventListener("click", () => nav.classList.toggle("open"));
+
 
 // BOTÓN SUBIR
 const btnTop = document.getElementById("btnTop");
